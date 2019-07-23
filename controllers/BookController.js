@@ -16,7 +16,7 @@ console.log("Account not found, create account")
             console.log("account created and list is "+account);
             //res.status(200).json({'dataStatus':'created','todos':account});
             var query={departname:account.departname}
-            
+
             Book.find(query)
             .then(semesterbookList => {
               console.log("Get all Data "+semesterbookList)
@@ -43,7 +43,7 @@ console.log("Account not found, create account")
                     console.log("updated successfully");
                 res.status(200).send({'questionStatus':'UPDATED', 'data':doc});
                      }
-                else { 
+                else {
                 res.status(500).send({'questionStatus':'NOT_UPDATED', 'data':doc}); }
                     });
 
@@ -63,14 +63,14 @@ console.log("Account not found, create account")
                 case 8:  var updateSemesterList={semester8:data};break;
                 default:break;
             }*/
-  
+
         /*    departBook.findById(data._id, { $set: updateSemesterList }, { new: true }, (err, doc) => {
     if (!err) {
         // res.send(doc);
         console.log("updated successfully");
         res.status(200).send({'questionStatus':'UPDATED', 'data':doc});
         }
-    else { 
+    else {
         res.status(500).send({'questionStatus':'NOT_UPDATED', 'data':doc}); }
 });
 
@@ -92,14 +92,14 @@ console.log("Account not found, create account")
 //       SelectedQuestions:req.body.SelectedQuestions,
 //       UnselectedQuestions:req.body.UnselectedQuestions
 //     }
-//   //here new:true is for to check that is data modified or not. 
+//   //here new:true is for to check that is data modified or not.
 //   boooks.findByIdAndUpdate(req.params._id, { $set: Question }, { new: true }, (err, doc) => {
 //     if (!err) {
 //         // res.send(doc);
 //         console.log("updated successfully");
 //         res.status(200).send({'questionStatus':'UPDATED', 'data':doc});
 //         }
-//     else { 
+//     else {
 //         res.status(500).send({'questionStatus':'NOT_UPDATED', 'data':doc}); }
 // });
-// }; 
+// };
